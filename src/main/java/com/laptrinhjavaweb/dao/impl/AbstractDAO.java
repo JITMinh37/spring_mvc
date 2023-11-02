@@ -18,7 +18,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 	public Connection getConnection() {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			String connectionUrl = "jdbc:sqlserver://localhost:1433;DatabaseName=Newservlet_jsp;user=sa;password=123;encrypt=false;";
+			String connectionUrl = "jdbc:sqlserver://localhost:1433;DatabaseName=Newservlet_jsp;user=sa;password=123123;encrypt=false;";
 //			Class.forName(resourceBundle.getString("drivename"));
 //			String connectionUrl = resourceBundle.getString("url");
 			return DriverManager.getConnection(connectionUrl);

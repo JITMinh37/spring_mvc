@@ -1,10 +1,8 @@
 package com.laptrinhjavaweb.controller.admin;
 
 
-import com.laptrinhjavaweb.paging.PageRequest;
-import com.laptrinhjavaweb.paging.Pageble;
 import com.laptrinhjavaweb.service.INewService;
-import com.laptrinhjavaweb.sort.Sorter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;

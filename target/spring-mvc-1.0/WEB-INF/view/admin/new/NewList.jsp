@@ -60,24 +60,24 @@
 											<table class="table table-bordered">
 												<thead>
 													<tr>						
-														<th><input type="checkbox" id="checkAll"></th>
+<%--														<th><input type="checkbox" id="checkAll"></th>--%>
 														<th>Tên bài viết</th>
 														<th>Mô tả ngắn</th>
-														<th>Thao tác</th>														
+<%--														<th>Thao tác</th>														--%>
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach var="item" items="${model.listResult}">
+													<c:forEach var="item" items="${model.getListResult()}">
 														<tr>
-														<td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>
+<%--															<td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>--%>
 															<td>${item.title}</td>
 															<td>${item.content}</td>
-															<td>
+<%--															<td>--%>
 
-																<a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
-																   title="Cập nhật bài viết" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-																</a>
-															</td>
+<%--																<a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"--%>
+<%--																   title="Cập nhật bài viết" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>--%>
+<%--																</a>--%>
+<%--															</td>--%>
 														</tr>
 													</c:forEach>
 												</tbody>

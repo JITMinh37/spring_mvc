@@ -3,7 +3,7 @@ package com.laptrinhjavaweb.service.impl;
 import java.sql.Date;
 import java.util.ArrayList;
 
-import javax.inject.Inject;
+
 
 import com.laptrinhjavaweb.dao.ICategoryDAO;
 import com.laptrinhjavaweb.dao.INewDAO;

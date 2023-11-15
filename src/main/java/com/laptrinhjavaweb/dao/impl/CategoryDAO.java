@@ -4,33 +4,31 @@ import java.util.ArrayList;
 
 import com.laptrinhjavaweb.dao.ICategoryDAO;
 import com.laptrinhjavaweb.mapper.CategoryMapper;
-import com.laptrinhjavaweb.mapper.NewMapper;
-import com.laptrinhjavaweb.model.categoryModel;
-import com.laptrinhjavaweb.model.newsModel;
+import com.laptrinhjavaweb.dto.CategoryDTO;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class CategoryDAO extends AbstractDAO<categoryModel> implements ICategoryDAO{
+public class CategoryDAO extends AbstractDAO<CategoryDTO> implements ICategoryDAO{
 	
 	@Override
-	public ArrayList<categoryModel> findListCategory() {
+	public ArrayList<CategoryDTO> findListCategory() {
 		String sql = "Select * from category";
 		return query(sql, new CategoryMapper());
 	}
 
 	@Override
-	public categoryModel findOne(Long id) {
-		ArrayList<categoryModel> listCategoryModel = new ArrayList<>();
+	public CategoryDTO findOne(Long id) {
+		ArrayList<CategoryDTO> listCategoryDTO = new ArrayList<>();
 		String sql = "Select * from category where id = ?";
-		listCategoryModel = query(sql, new CategoryMapper(), id);
-		return listCategoryModel.isEmpty() ? null : listCategoryModel.get(0);
+		listCategoryDTO = query(sql, new CategoryMapper(), id);
+		return listCategoryDTO.isEmpty() ? null : listCategoryDTO.get(0);
 	}
 
 	@Override
-	public categoryModel findOneByCategoryCode(String code) {
-		ArrayList<categoryModel> listCategoryModel = new ArrayList<>();
+	public CategoryDTO findOneByCategoryCode(String code) {
+		ArrayList<CategoryDTO> listCategoryDTO = new ArrayList<>();
 		String sql = "Select * from category where code = ?";
-		listCategoryModel = query(sql, new CategoryMapper(), code);
-		return listCategoryModel.isEmpty() ? null : listCategoryModel.get(0);
+		listCategoryDTO = query(sql, new CategoryMapper(), code);
+		return listCategoryDTO.isEmpty() ? null : listCategoryDTO.get(0);
 	}
 }

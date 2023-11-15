@@ -2,16 +2,16 @@ package com.laptrinhjavaweb.service;
 
 import java.util.ArrayList;
 
-import com.laptrinhjavaweb.model.newsModel;
-import com.laptrinhjavaweb.paging.Pageble;
+import com.laptrinhjavaweb.dto.NewsDTO;
+
 
 public interface INewService {
-	ArrayList<newsModel> addByCategoryId(long categoryId);
-	newsModel save(newsModel newModel);
-	newsModel update(newsModel updateNew);
+	ArrayList<NewsDTO> addByCategoryId(long categoryId);
+	NewsDTO save(NewsDTO newModel);
+	NewsDTO update(NewsDTO updateNew);
 	void delete(long [] ids);
-	ArrayList<newsModel> listNew();
+	ArrayList<NewsDTO> listNew();
 	int getTotalItem();
-	newsModel findOne(Long id);
+	NewsDTO findOne(Long id);
 
 }

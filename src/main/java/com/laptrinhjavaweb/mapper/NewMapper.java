@@ -3,13 +3,13 @@ package com.laptrinhjavaweb.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.laptrinhjavaweb.model.newsModel;
+import com.laptrinhjavaweb.dto.NewsDTO;
 
-public class NewMapper implements RowMapper<newsModel>{
+public class NewMapper implements RowMapper<NewsDTO>{
 
 	@Override
-	public newsModel mapRow(ResultSet rs) {
-		newsModel news = new newsModel();
+	public NewsDTO mapRow(ResultSet rs) {
+		NewsDTO news = new NewsDTO();
 		try {
 			news.setId(rs.getLong("id"));
 			news.setTitle(rs.getString("title"));

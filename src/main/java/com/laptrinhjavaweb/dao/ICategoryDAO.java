@@ -2,10 +2,10 @@ package com.laptrinhjavaweb.dao;
 
 import java.util.ArrayList;
 
-import com.laptrinhjavaweb.model.categoryModel;
+import com.laptrinhjavaweb.dto.CategoryDTO;
 
-public interface ICategoryDAO extends GenericDAO<categoryModel>{
-	ArrayList<categoryModel> findListCategory();
-	categoryModel findOne(Long id);
-	categoryModel findOneByCategoryCode(String code);
+public interface ICategoryDAO extends GenericDAO<CategoryDTO>{
+	ArrayList<CategoryDTO> findListCategory();
+	CategoryDTO findOne(Long id);
+	CategoryDTO findOneByCategoryCode(String code);
 }

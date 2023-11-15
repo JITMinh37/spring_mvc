@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.laptrinhjavaweb.model.newsModel;
+import com.laptrinhjavaweb.dto.NewsDTO;
 
 @Controller(value = "NewControllerOfAdmin")
 public class NewController {
@@ -19,7 +19,7 @@ public class NewController {
     private INewService newService;
 
     @RequestMapping(value = "/admin-home/news", method = RequestMethod.GET)
-    public ModelAndView ShowListNews(@ModelAttribute("model") newsModel model) { // Lưu ý: model trong @ModelAttribute là tên biến tham chiếu đến model ở view
+    public ModelAndView ShowListNews(@ModelAttribute("model") NewsDTO model) { // Lưu ý: model trong @ModelAttribute là tên biến tham chiếu đến model ở view
                                                                                     // Còn model ở newsModel là giá trị value của model để truyền vào key("model")
         ModelAndView mav = new ModelAndView("admin/new/NewList");
 

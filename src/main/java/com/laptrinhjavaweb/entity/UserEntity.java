@@ -19,9 +19,6 @@ public class UserEntity extends BaseEntity{
     @Column(name = "status")
     private int status;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "roleId")
-    private RoleEntity role;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "comment",
@@ -32,6 +29,28 @@ public class UserEntity extends BaseEntity{
                     @JoinColumn(name = "newid", referencedColumnName = "id")
             })
     private List<NewsEntity> news = new ArrayList<>();
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "role_user",
+                joinColumns = {
+                    @JoinColumn(name = "userid", referencedColumnName = "id")
+                },
+                inverseJoinColumns = {
+                    @JoinColumn(name = "roleid", referencedColumnName = "id")
+                })
+    private List<RoleEntity> roles = new ArrayList<>();
+
+    public void setNews(List<NewsEntity> news) {
+        this.news = news;
+    }
+
+    public List<RoleEntity> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<RoleEntity> roles) {
+        this.roles = roles;
+    }
 
     public String getUsername() {
         return username;
@@ -65,13 +84,6 @@ public class UserEntity extends BaseEntity{
         this.status = status;
     }
 
-    public RoleEntity getRole() {
-        return role;
-    }
-
-    public void setRole(RoleEntity role) {
-        this.role = role;
-    }
 
     public List<NewsEntity> getNews() {
         return news;
@@ -84,11 +96,10 @@ public class UserEntity extends BaseEntity{
     public UserEntity() {
     }
 
-    public UserEntity(String username, String password, String fullname, int status, RoleEntity role) {
+    public UserEntity(String username, String password, String fullname, int status) {
         this.username = username;
         this.password = password;
         this.fullname = fullname;
         this.status = status;
-        this.role = role;
     }
 }

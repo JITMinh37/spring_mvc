@@ -2,15 +2,14 @@ package com.laptrinhjavaweb.dao;
 
 import java.util.ArrayList;
 
-import com.laptrinhjavaweb.model.newsModel;
-import com.laptrinhjavaweb.paging.Pageble;
+import com.laptrinhjavaweb.dto.NewsDTO;
 
-public interface INewDAO extends GenericDAO<newsModel>{
-	ArrayList<newsModel> addByCategoryId(long categoryId);
-	Long save(newsModel newModel);
-	newsModel findOne(Long id);
-	void update(newsModel updateNew);
+public interface INewDAO extends GenericDAO<NewsDTO>{
+	ArrayList<NewsDTO> addByCategoryId(long categoryId);
+	Long save(NewsDTO newModel);
+	NewsDTO findOne(Long id);
+	void update(NewsDTO updateNew);
 	void delete(long id);
-	ArrayList<newsModel> listNews();
+	ArrayList<NewsDTO> listNews();
 	int getTotalItem();
 }

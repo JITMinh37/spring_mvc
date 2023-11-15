@@ -3,22 +3,21 @@ package com.laptrinhjavaweb.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.laptrinhjavaweb.model.newsModel;
-import com.laptrinhjavaweb.model.roleModel;
-import com.laptrinhjavaweb.model.userModel;
+import com.laptrinhjavaweb.dto.RoleDTO;
+import com.laptrinhjavaweb.dto.UserDTO;
 
-public class UserMapper implements RowMapper<userModel>{
+public class UserMapper implements RowMapper<UserDTO>{
 
 	@Override
-	public userModel mapRow(ResultSet rs) {
-		userModel user = new userModel();
+	public UserDTO mapRow(ResultSet rs) {
+		UserDTO user = new UserDTO();
 		try {
 			user.setId(rs.getLong("id"));
 			user.setUserName(rs.getString("username"));
 			user.setPassWord(rs.getString("password"));
 			user.setFullName(rs.getString("fullname"));
 			user.setStatus(rs.getInt("status"));
-			roleModel role = new roleModel();
+			RoleDTO role = new RoleDTO();
 			role.setName(rs.getString("name"));
 			role.setCode(rs.getString("code"));
 			user.setRole(role);

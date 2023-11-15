@@ -3,13 +3,13 @@ package com.laptrinhjavaweb.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.laptrinhjavaweb.model.categoryModel;
+import com.laptrinhjavaweb.dto.CategoryDTO;
 
-public class CategoryMapper implements RowMapper<categoryModel>{
+public class CategoryMapper implements RowMapper<CategoryDTO>{
 
 	@Override
-	public categoryModel mapRow(ResultSet rs) {
-		categoryModel category = new categoryModel();
+	public CategoryDTO mapRow(ResultSet rs) {
+		CategoryDTO category = new CategoryDTO();
 		try {
 			category.setId(rs.getLong("id"));
 			category.setName(rs.getString("name"));

@@ -2,8 +2,8 @@ package com.laptrinhjavaweb.service;
 
 import java.util.ArrayList;
 
-import com.laptrinhjavaweb.model.categoryModel;
+import com.laptrinhjavaweb.dto.CategoryDTO;
 
 public interface ICategoryService {
-	ArrayList<categoryModel> findListCategory();
+	ArrayList<CategoryDTO> findListCategory();
 }
